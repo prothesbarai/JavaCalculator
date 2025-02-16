@@ -10,9 +10,10 @@ package CalculatorPro;
  */
 public class Calculator extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Calculator
-     */
+    public double firstNumber;
+    public double secondNumber;
+    public String operation;
+    
     public Calculator() {
         initComponents();
     }
@@ -51,6 +52,11 @@ public class Calculator extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         textField.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        textField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldActionPerformed(evt);
+            }
+        });
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setText("C");
@@ -257,6 +263,10 @@ public class Calculator extends javax.swing.JFrame {
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldActionPerformed
 
     /**
      * @param args the command line arguments
