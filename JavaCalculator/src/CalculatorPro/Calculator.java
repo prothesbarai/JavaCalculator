@@ -316,7 +316,11 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
+        // Check Dot In the textField
+        if (!textField.getText().contains(".")) {
+            String enterNumber = textField.getText() + jButton19.getText();
+            textField.setText(enterNumber);
+        }
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void textFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldActionPerformed
@@ -400,7 +404,8 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (textField.getText().length() > 0) {
-            textField.setText(textField.getText().substring(0, textField.getText().length() - 1));
+            String enterNumber = textField.getText().substring(0, textField.getText().length() - 1);
+            textField.setText(enterNumber);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
