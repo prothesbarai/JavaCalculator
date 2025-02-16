@@ -14,6 +14,7 @@ public class Calculator extends javax.swing.JFrame {
     public double secondNumber;
     public double result;
     public String operation;
+    public String answer;
 
     public Calculator() {
         initComponents();
@@ -86,6 +87,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton4.setText("/");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton5.setText("7");
@@ -113,6 +119,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton8.setText("*");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton9.setText("4");
@@ -140,6 +151,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton12.setText("-");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton13.setText("1");
@@ -167,6 +183,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton16.setText("+");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton17.setText("0");
@@ -194,6 +215,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton20.setText("=");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -391,6 +417,8 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         textField.setText(null);
+        answer = null;
+        operation = null;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -414,6 +442,82 @@ public class Calculator extends javax.swing.JFrame {
             textField.setText(enterNumber);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        if (textField.getText().length() > 0) {
+            firstNumber = Double.parseDouble(textField.getText());
+            textField.setText(null);
+            operation = "+";
+        }
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        if (!textField.getText().isEmpty()) {  // যদি TextField খালি না থাকে
+            try {
+                if (operation == null) {
+                    // যদি ইউজার শুধু প্রথম সংখ্যা ইনপুট দিয়ে "=" চাপ দেয়
+                    textField.setText(textField.getText());
+                    return;  // কোনো গণনা করবে না, সরাসরি রিটার্ন করবে
+                }
+                
+                if (textField.getText().equals(String.valueOf(firstNumber))) {
+                    textField.setText(String.format("%d", (int) firstNumber)); // প্রথম সংখ্যা দেখাবে
+                    return;
+                }
+
+                secondNumber = Double.parseDouble(textField.getText()); // দ্বিতীয় সংখ্যা নেবে
+
+                if (operation.equals("+")) {
+                    result = firstNumber + secondNumber;
+                } else if (operation.equals("-")) {
+                    result = firstNumber - secondNumber;
+                } else if (operation.equals("*")) {
+                    result = firstNumber * secondNumber;
+                } else if (operation.equals("/")) {
+                    result = firstNumber / secondNumber;
+                } else {
+                    return; // যদি কোনো বৈধ অপারেশন না থাকে, তাহলে কিছু করবে না
+                }
+
+                // পূর্ণসংখ্যা হলে পয়েন্ট ছাড়া, দশমিক থাকলে পয়েন্ট সহ দেখাবে
+                if (result == (int) result) {
+                    answer = String.format("%d", (int) result);
+                } else {
+                    answer = String.format("%.1f", result);
+                }
+
+                textField.setText(answer);
+            } catch (NumberFormatException e) {
+                textField.setText("Error");  // ভুল ইনপুট থাকলে "Error" দেখাবে
+            }
+        } else {
+            textField.setText(null);  // যদি একদম খালি থাকে, তাহলে "0" দেখাবে
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        if (textField.getText().length() > 0) {
+            firstNumber = Double.parseDouble(textField.getText());
+            textField.setText(null);
+            operation = "-";
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        if (textField.getText().length() > 0) {
+            firstNumber = Double.parseDouble(textField.getText());
+            textField.setText(null);
+            operation = "*";
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (textField.getText().length() > 0) {
+            firstNumber = Double.parseDouble(textField.getText());
+            textField.setText(null);
+            operation = "/";
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
