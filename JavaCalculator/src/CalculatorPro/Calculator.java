@@ -199,10 +199,10 @@ public class Calculator extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(textField)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textField)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -254,7 +254,8 @@ public class Calculator extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -316,10 +317,15 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // Check Dot In the textField
-        if (!textField.getText().contains(".")) {
-            String enterNumber = textField.getText() + jButton19.getText();
-            textField.setText(enterNumber);
+        String currentText = textField.getText();
+        String buttonText = jButton19.getText(); // ধরে নিচ্ছি jButton19 হলো "."
+
+        if (currentText.isEmpty()) {
+            // যদি TextField খালি থাকে এবং ইউজার '.' চাপলে, আগে '0' বসিয়ে দেবে
+            textField.setText("0" + buttonText);
+        } else if (!currentText.contains(".")) {
+            // যদি আগেই '.' না থাকে, তবে নতুন '.' যোগ করবে
+            textField.setText(currentText + buttonText);
         }
     }//GEN-LAST:event_jButton19ActionPerformed
 
