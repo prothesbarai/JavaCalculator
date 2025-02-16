@@ -53,13 +53,13 @@ public class Calculator extends javax.swing.JFrame {
         textField.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton1.setText("1");
+        jButton1.setText("C");
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton2.setText("2");
+        jButton2.setText("←");
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton3.setText("3");
+        jButton3.setText("%");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -67,16 +67,16 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton4.setText("4");
+        jButton4.setText("/");
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton5.setText("5");
+        jButton5.setText("7");
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton6.setText("6");
+        jButton6.setText("8");
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton7.setText("7");
+        jButton7.setText("9");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -84,16 +84,16 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton8.setText("8");
+        jButton8.setText("*");
 
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton9.setText("9");
+        jButton9.setText("4");
 
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton10.setText("0");
+        jButton10.setText("5");
 
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton11.setText("+");
+        jButton11.setText("6");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -104,13 +104,13 @@ public class Calculator extends javax.swing.JFrame {
         jButton12.setText("-");
 
         jButton13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton13.setText("*");
+        jButton13.setText("1");
 
         jButton14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton14.setText("/");
+        jButton14.setText("2");
 
         jButton15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton15.setText("%");
+        jButton15.setText("3");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
@@ -118,16 +118,16 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton16.setText(".");
+        jButton16.setText("+");
 
         jButton17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton17.setText("C");
+        jButton17.setText("0");
 
         jButton18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton18.setText("=");
+        jButton18.setText("00");
 
         jButton19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton19.setText("00");
+        jButton19.setText(".");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton19ActionPerformed(evt);
@@ -135,7 +135,7 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton20.setText("←");
+        jButton20.setText("=");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
