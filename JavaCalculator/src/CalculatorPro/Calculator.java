@@ -324,7 +324,11 @@ public class Calculator extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        if (textField.getText().length() > 0) {
+            firstNumber = Double.parseDouble(textField.getText());
+            textField.setText(null);
+            operation = "%";
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -475,6 +479,8 @@ public class Calculator extends javax.swing.JFrame {
                     result = firstNumber * secondNumber;
                 } else if (operation.equals("/")) {
                     result = firstNumber / secondNumber;
+                } else if (operation.equals("%")) {
+                    result = firstNumber % secondNumber;
                 } else {
                     return; // যদি কোনো বৈধ অপারেশন না থাকে, তাহলে কিছু করবে না
                 }
