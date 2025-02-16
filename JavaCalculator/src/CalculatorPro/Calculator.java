@@ -14,7 +14,7 @@ public class Calculator extends javax.swing.JFrame {
     public double secondNumber;
     public double result;
     public String operation;
-    
+
     public Calculator() {
         initComponents();
     }
@@ -62,6 +62,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setText("C");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton2.setText("←");
@@ -79,9 +84,19 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton5.setText("7");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton6.setText("8");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton7.setText("9");
@@ -96,9 +111,19 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton9.setText("4");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton10.setText("5");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton11.setText("6");
@@ -121,6 +146,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton14.setText("2");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton15.setText("3");
@@ -135,9 +165,19 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton17.setText("0");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jButton18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton18.setText("00");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         jButton19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton19.setText(".");
@@ -210,7 +250,7 @@ public class Calculator extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,15 +296,18 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        String enterNumber = textField.getText() + jButton7.getText();
+        textField.setText(enterNumber);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+        String enterNumber = textField.getText() + jButton11.getText();
+        textField.setText(enterNumber);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
+        String enterNumber = textField.getText() + jButton15.getText();
+        textField.setText(enterNumber);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -279,6 +322,76 @@ public class Calculator extends javax.swing.JFrame {
         String enterNumber = textField.getText() + jButton13.getText();
         textField.setText(enterNumber);
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        String enterNumber = textField.getText() + jButton14.getText();
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        String enterNumber = textField.getText();
+        String clickedNumber = jButton17.getText();
+        // যদি TextField খালি থাকে এবং প্রথম ক্লিক করা সংখ্যা 0 হয়, তাহলে কিছুই হবে না
+        if (enterNumber.isEmpty() && clickedNumber.equals("0")) {
+            return; // 0 যোগ হবে না
+        }
+        // যদি প্রথম সংখ্যা 0 থাকে এবং নতুন সংখ্যা 1-9 হয়, তাহলে 0 সরিয়ে নতুন সংখ্যা বসবে
+        if (enterNumber.equals("0") && !clickedNumber.equals("0")) {
+            enterNumber = clickedNumber;
+        } // যদি TextField খালি থাকে এবং প্রথম ক্লিক করা সংখ্যা 1-9 হয়, তাহলে সেটাই বসবে
+        else if (enterNumber.isEmpty() && !clickedNumber.equals("0")) {
+            enterNumber = clickedNumber;
+        } // যদি আগের সংখ্যা 1-9 থাকে, তাহলে স্বাভাবিকভাবে নতুন সংখ্যা যোগ হবে
+        else if (!enterNumber.isEmpty()) {
+            enterNumber += clickedNumber;
+        }
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        String enterNumber = textField.getText();
+        String clickedNumber = ((javax.swing.JButton) evt.getSource()).getText(); // যে বোতাম ক্লিক হবে সেটার সংখ্যা
+        // যদি TextField খালি থাকে এবং প্রথম ক্লিক করা সংখ্যা 0 বা 00 হয়, তাহলে কিছুই হবে না
+        if (enterNumber.isEmpty() && (clickedNumber.equals("0") || clickedNumber.equals("00"))) {
+            return; // প্রথমে 0 বা 00 লেখা যাবে না
+        }
+        // যদি TextField-এ শুধু 0 থাকে এবং নতুন সংখ্যা 1-9 হয়, তাহলে 0 সরিয়ে নতুন সংখ্যা বসবে
+        if (enterNumber.equals("0") && !clickedNumber.equals("0") && !clickedNumber.equals("00")) {
+            enterNumber = clickedNumber;
+        } // যদি TextField-এ শুধু 0 থাকে এবং আবার 0 বা 00 ক্লিক করা হয়, তাহলে কিছুই হবে না (00 প্রতিরোধ)
+        else if (enterNumber.equals("0") && (clickedNumber.equals("0") || clickedNumber.equals("00"))) {
+            return; // দ্বিতীয় 0 বা 00 সংরক্ষিত হবে না
+        } // যদি আগের সংখ্যা 1-9 থাকে, তাহলে স্বাভাবিকভাবে নতুন সংখ্যা যোগ হবে
+        else {
+            enterNumber += clickedNumber;
+        }
+
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        String enterNumber = textField.getText() + jButton9.getText();
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        textField.setText(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        String enterNumber = textField.getText() + jButton5.getText();
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String enterNumber = textField.getText() + jButton6.getText();
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        String enterNumber = textField.getText() + jButton10.getText();
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
