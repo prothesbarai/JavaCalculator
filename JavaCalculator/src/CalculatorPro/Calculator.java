@@ -12,6 +12,7 @@ public class Calculator extends javax.swing.JFrame {
 
     public double firstNumber;
     public double secondNumber;
+    public double result;
     public String operation;
     
     public Calculator() {
@@ -52,6 +53,7 @@ public class Calculator extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         textField.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        textField.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         textField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldActionPerformed(evt);
@@ -111,6 +113,11 @@ public class Calculator extends javax.swing.JFrame {
 
         jButton13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton13.setText("1");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton14.setText("2");
@@ -268,6 +275,11 @@ public class Calculator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldActionPerformed
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        String enterNumber = textField.getText() + jButton13.getText();
+        textField.setText(enterNumber);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -297,6 +309,7 @@ public class Calculator extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Calculator().setVisible(true);
             }
