@@ -2,7 +2,7 @@
 
 A simple Java-based calculator application that performs basic arithmetic operations such as addition, subtraction, multiplication, and division.
 
-## Features
+## Features 
 - Basic arithmetic operations: Addition, Subtraction, Multiplication, Division
 - User-friendly graphical user interface (GUI)
 - Error handling for invalid inputs and division by zero
