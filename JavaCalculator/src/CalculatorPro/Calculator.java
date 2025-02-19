@@ -348,13 +348,11 @@ public class Calculator extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         String currentText = textField.getText();
-        String buttonText = jButton19.getText(); // ধরে নিচ্ছি jButton19 হলো "."
+        String buttonText = jButton19.getText();
 
         if (currentText.isEmpty()) {
-            // যদি TextField খালি থাকে এবং ইউজার '.' চাপলে, আগে '0' বসিয়ে দেবে
             textField.setText("0" + buttonText);
         } else if (!currentText.contains(".")) {
-            // যদি আগেই '.' না থাকে, তবে নতুন '.' যোগ করবে
             textField.setText(currentText + buttonText);
         }
     }//GEN-LAST:event_jButton19ActionPerformed
@@ -376,21 +374,12 @@ public class Calculator extends javax.swing.JFrame {
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         String enterNumber = textField.getText();
         String clickedNumber = jButton17.getText();
-        // যদি TextField খালি থাকে এবং প্রথম ক্লিক করা সংখ্যা 0 হয়, তাহলে কিছুই হবে না
-        if (enterNumber.isEmpty() && clickedNumber.equals("0")) {
-            return; // 0 যোগ হবে না
+        if(enterNumber.isEmpty()){
+            textField.setText(null);
+        }else{
+            textField.setText(enterNumber + clickedNumber);
         }
-        // যদি প্রথম সংখ্যা 0 থাকে এবং নতুন সংখ্যা 1-9 হয়, তাহলে 0 সরিয়ে নতুন সংখ্যা বসবে
-        if (enterNumber.equals("0") && !clickedNumber.equals("0")) {
-            enterNumber = clickedNumber;
-        } // যদি TextField খালি থাকে এবং প্রথম ক্লিক করা সংখ্যা 1-9 হয়, তাহলে সেটাই বসবে
-        else if (enterNumber.isEmpty() && !clickedNumber.equals("0")) {
-            enterNumber = clickedNumber;
-        } // যদি আগের সংখ্যা 1-9 থাকে, তাহলে স্বাভাবিকভাবে নতুন সংখ্যা যোগ হবে
-        else if (!enterNumber.isEmpty()) {
-            enterNumber += clickedNumber;
-        }
-        textField.setText(enterNumber);
+        
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
