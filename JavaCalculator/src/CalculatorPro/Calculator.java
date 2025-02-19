@@ -15,6 +15,8 @@ public class Calculator extends javax.swing.JFrame {
     public double result;
     public String operation;
     public String answer;
+    public double root;
+    public double square;
 
     public Calculator() {
         initComponents();
@@ -234,7 +236,7 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton22.setText("7");
+        jButton22.setText("√");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton22ActionPerformed(evt);
@@ -325,8 +327,8 @@ public class Calculator extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(textField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,20 +427,20 @@ public class Calculator extends javax.swing.JFrame {
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         String enterNumber = textField.getText();
         String clickedNumber = jButton17.getText();
-        if(enterNumber.isEmpty()){
+        if (enterNumber.isEmpty()) {
             textField.setText(null);
-        }else{
+        } else {
             textField.setText(enterNumber + clickedNumber);
         }
-        
+
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         String getNumber = textField.getText();
         String getValue = jButton18.getText();
-        if(getNumber.isEmpty()){
+        if (getNumber.isEmpty()) {
             textField.setText(null);
-        }else{
+        } else {
             textField.setText(getNumber + getValue);
         }
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -491,7 +493,7 @@ public class Calculator extends javax.swing.JFrame {
                     textField.setText(textField.getText());
                     return;
                 }
-                
+
                 if (textField.getText().equals(String.valueOf(firstNumber))) {
                     textField.setText(String.format("%d", (int) firstNumber));
                     return;
@@ -555,7 +557,17 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
+        if (textField.getText().length() > 0) {
+            root = Double.parseDouble(textField.getText());
+            result = Math.sqrt(root);
+            
+            if(result == (int) result){
+                answer = String.format("%d", (int) result);
+            }else{
+                answer = String.format("%.5f", result);
+            }
+            textField.setText(answer);
+        }
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
