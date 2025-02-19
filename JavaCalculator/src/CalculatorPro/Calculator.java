@@ -383,24 +383,13 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        String enterNumber = textField.getText();
-        String clickedNumber = ((javax.swing.JButton) evt.getSource()).getText(); // যে বোতাম ক্লিক হবে সেটার সংখ্যা
-        // যদি TextField খালি থাকে এবং প্রথম ক্লিক করা সংখ্যা 0 বা 00 হয়, তাহলে কিছুই হবে না
-        if (enterNumber.isEmpty() && (clickedNumber.equals("0") || clickedNumber.equals("00"))) {
-            return; // প্রথমে 0 বা 00 লেখা যাবে না
+        String getNumber = textField.getText();
+        String getValue = jButton18.getText();
+        if(getNumber.isEmpty()){
+            textField.setText(null);
+        }else{
+            textField.setText(getNumber + getValue);
         }
-        // যদি TextField-এ শুধু 0 থাকে এবং নতুন সংখ্যা 1-9 হয়, তাহলে 0 সরিয়ে নতুন সংখ্যা বসবে
-        if (enterNumber.equals("0") && !clickedNumber.equals("0") && !clickedNumber.equals("00")) {
-            enterNumber = clickedNumber;
-        } // যদি TextField-এ শুধু 0 থাকে এবং আবার 0 বা 00 ক্লিক করা হয়, তাহলে কিছুই হবে না (00 প্রতিরোধ)
-        else if (enterNumber.equals("0") && (clickedNumber.equals("0") || clickedNumber.equals("00"))) {
-            return; // দ্বিতীয় 0 বা 00 সংরক্ষিত হবে না
-        } // যদি আগের সংখ্যা 1-9 থাকে, তাহলে স্বাভাবিকভাবে নতুন সংখ্যা যোগ হবে
-        else {
-            enterNumber += clickedNumber;
-        }
-
-        textField.setText(enterNumber);
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -478,7 +467,7 @@ public class Calculator extends javax.swing.JFrame {
                 if (result == (int) result) {
                     answer = String.format("%d", (int) result);
                 } else {
-                    answer = String.format("%.1f", result);
+                    answer = String.format("%.3f", result);
                 }
 
                 textField.setText(answer);
