@@ -16,7 +16,7 @@ public class Calculator extends javax.swing.JFrame {
     public String operation;
     public String answer;
     public double root;
-    public double square;
+    public double factNum;
 
     public Calculator() {
         initComponents();
@@ -228,7 +228,6 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton21.setText("*");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
@@ -253,7 +252,7 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton24.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton24.setText("9");
+        jButton24.setText("!");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton24ActionPerformed(evt);
@@ -582,7 +581,23 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
+        if(textField.getText().length()>0){
+            factNum = Double.parseDouble(textField.getText());
+            double fact = 1;
+            for(int i = 1; i<=factNum; i++){
+                fact = fact * i;
+            }
+            
+            if(fact == (int)fact){
+                answer = String.format("%d", (int) fact);
+            }else{
+                answer = String.format("%.5f", fact);
+            }
+            
+            textField.setText(answer);
+            
+        }
+        
     }//GEN-LAST:event_jButton24ActionPerformed
 
     /**
