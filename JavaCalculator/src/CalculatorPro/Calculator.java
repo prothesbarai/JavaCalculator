@@ -15,6 +15,7 @@ public class Calculator extends javax.swing.JFrame {
     public double result;
     public String operation;
     public String answer;
+    public String piNum;
     public double root;
     public double factNum;
 
@@ -228,6 +229,7 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton21.setText("π");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
@@ -555,7 +557,12 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
+        if(textField.getText().isEmpty()){
+            piNum = String.valueOf(Math.PI);
+            textField.setText(piNum);
+        }else{
+            textField.setText(piNum);
+        }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
