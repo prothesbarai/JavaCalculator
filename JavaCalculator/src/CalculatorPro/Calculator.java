@@ -244,7 +244,8 @@ public class Calculator extends javax.swing.JFrame {
         });
 
         jButton23.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton23.setText("8");
+        jButton23.setText("^");
+        jButton23.setToolTipText("");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton23ActionPerformed(evt);
@@ -511,6 +512,8 @@ public class Calculator extends javax.swing.JFrame {
                     result = firstNumber / secondNumber;
                 } else if (operation.equals("%")) {
                     result = firstNumber % secondNumber;
+                } else if (operation.equals("^")) {
+                    result = Math.pow(firstNumber, secondNumber);
                 }
 
                 if (result == (int) result) {
@@ -571,7 +574,11 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
+        if(textField.getText().length()>0){
+            firstNumber = Double.parseDouble(textField.getText());
+            textField.setText(null);
+            operation = "^";
+        }
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
