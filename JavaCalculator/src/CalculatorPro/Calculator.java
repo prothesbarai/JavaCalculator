@@ -437,17 +437,16 @@ public class Calculator extends javax.swing.JFrame {
         if (!textField.getText().isEmpty()) {  // যদি TextField খালি না থাকে
             try {
                 if (operation == null) {
-                    // যদি ইউজার শুধু প্রথম সংখ্যা ইনপুট দিয়ে "=" চাপ দেয়
                     textField.setText(textField.getText());
-                    return;  // কোনো গণনা করবে না, সরাসরি রিটার্ন করবে
+                    return;
                 }
                 
                 if (textField.getText().equals(String.valueOf(firstNumber))) {
-                    textField.setText(String.format("%d", (int) firstNumber)); // প্রথম সংখ্যা দেখাবে
+                    textField.setText(String.format("%d", (int) firstNumber));
                     return;
                 }
 
-                secondNumber = Double.parseDouble(textField.getText()); // দ্বিতীয় সংখ্যা নেবে
+                secondNumber = Double.parseDouble(textField.getText());
 
                 if (operation.equals("+")) {
                     result = firstNumber + secondNumber;
@@ -459,11 +458,8 @@ public class Calculator extends javax.swing.JFrame {
                     result = firstNumber / secondNumber;
                 } else if (operation.equals("%")) {
                     result = firstNumber % secondNumber;
-                } else {
-                    return; // যদি কোনো বৈধ অপারেশন না থাকে, তাহলে কিছু করবে না
                 }
 
-                // পূর্ণসংখ্যা হলে পয়েন্ট ছাড়া, দশমিক থাকলে পয়েন্ট সহ দেখাবে
                 if (result == (int) result) {
                     answer = String.format("%d", (int) result);
                 } else {
@@ -472,10 +468,10 @@ public class Calculator extends javax.swing.JFrame {
 
                 textField.setText(answer);
             } catch (NumberFormatException e) {
-                textField.setText("Error");  // ভুল ইনপুট থাকলে "Error" দেখাবে
+                textField.setText("Error");
             }
         } else {
-            textField.setText(null);  // যদি একদম খালি থাকে, তাহলে "0" দেখাবে
+            textField.setText(null);
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
